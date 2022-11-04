@@ -25,6 +25,6 @@ public class NameOnlyRemapper extends Remapper {
     }
     @Override
     public String mapInvokeDynamicMethodName(String name, String descriptor) {
-        return methods.getOrDefault(name+descriptor, name);
+        return methods.getOrDefault(name+descriptor, methods.getOrDefault(name, name));
     }
 }
